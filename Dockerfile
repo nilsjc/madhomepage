@@ -17,7 +17,7 @@ RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # collectstatic (ensure STATIC_ROOT is set in settings)
-RUN python manage.py collectstatic --noinput
+RUN python my_club/manage.py collectstatic --noinput
 
 # Create non-root user and use it
 RUN useradd --create-home appuser && chown -R appuser /app
